@@ -1,6 +1,5 @@
 .sandris-cnt {
   display: none;
-  position: absolute;
   bottom: 5px;
   flex-direction: column;
   width: 80%;
@@ -11,13 +10,13 @@
 
 .sandris-cnt>span {
   text-align: center;
-  padding: 15px 5px;
+  padding: 10px 5px;
   border: 1px solid white;
   border-radius: 15px;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 20px;
+  font-size: 18px;
   user-select: none;
-  min-width: 20px;
+  min-width: 120px;
 }
 
 .sandris-cnt>canvas {
@@ -25,4 +24,16 @@
   border-top: none;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+}
+
+@media (max-width:550px) {
+  .sandris-cnt>span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width:450px) {
+  .sandris-cnt>span {
+    font-size: 12px;
+  }
 }

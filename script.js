@@ -134,8 +134,9 @@ function highlightProject(){
 
   const midX = focusedProject.pos.left+(focusedProject.pos.right-focusedProject.pos.left)/2
   mainCtx.beginPath();
-  mainCtx.textAlign = 'center'
-  mainCtx.fillText('Double Click to see Project',midX,focusedProject.pos.top-margin-20);
+  mainCtx.textAlign = 'center';
+  mainCtx.fontSize = '20px';
+  mainCtx.fillText('Double Click to see Project',midX,focusedProject.pos.top-margin-30);
 }
 
 function handleMouseMove(e){

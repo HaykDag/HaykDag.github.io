@@ -1,5 +1,3 @@
-// const sandrisCanvas = document.getElementById('mainCanvas');
-// const sandrisctx = sandTrisCanvas.getContext('2d');
 const sandrisCanvas = document.createElement('canvas');
 const sandrisctx = sandrisCanvas.getContext('2d');
 
@@ -19,7 +17,7 @@ const lineConntected = document.createElement('audio');
 lineConntected.src = './src/sandris/audio/line-connect.mp3';
 
 
-const playground = new Playground(sandrisCanvas);
+let playground = null;
 
 let lastTime = 0;
 let sandrisFinish = false;
@@ -32,6 +30,8 @@ function sandrisAnimate(time){
     sandrisCnt.style.display = 'flex';
     const sandrisInfo = document.createElement('span');
     sandrisInfo.textContent = `Get at least 1 point to move ahead. Sorry, there is no way around that`;
+    sandrisCanvas.height = getHeight();
+    playground = new Playground(sandrisCanvas);
     sandrisCnt.appendChild(sandrisInfo);
     sandrisCnt.appendChild(sandrisCanvas);
     info = true;
@@ -50,5 +50,10 @@ let sideStep = 4+fallSpeed;
 let colide = false;
 
 
+function getHeight(){
+  const headerRect = document.getElementById('header').getBoundingClientRect();
+  const height = window.innerHeight - headerRect.bottom - 80;
+  return height;
+}
 
 

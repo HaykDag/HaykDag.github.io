@@ -2,8 +2,7 @@
   position: relative;
   background-image: -webkit-linear-gradient(90deg, #050505, #261a1a, #1f3323, #626f4b);
   user-select: none;
-  width: 100%;
-  min-width: 350px;
+  min-width: 100%;
   border-bottom: 1px solid rgb(4, 51, 11);
 
 }
@@ -234,5 +233,23 @@ header>button:hover {
     right: 5px;
     width: 30%;
     justify-content: right;
+  }
+}
+
+@media (max-width: 450px) {
+  .Typewriter__wrapper {
+    font-size: 14px;
+  }
+
+  header>button {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
   }
 }
