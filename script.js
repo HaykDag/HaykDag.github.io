@@ -1,19 +1,27 @@
 const mainEl = document.getElementById('main');
+let expBtn = null;
 let mainCanvas = null;
 let mainCtx = null;
 let viewport = null;
 const bubbles = [];
 
 function explore(){
-  document.getElementById('explore').blur();
-  document.getElementById('explore').style.display = 'none';
+  expBtn = document.getElementById('explore'); 
+  expBtn.blur();
+  expBtn.innerText = 'Skip the Game';
+  expBtn.onclick = ()=> {
+    sandrisFinish = true;
+    exploreProjects();
+  }
 
-  exploreProjects()
-  //sandrisAnimate();
+  //exploreProjects()
+  sandrisAnimate();
 }
 
 
 function exploreProjects(){
+  expBtn.style.display = 'none';
+
   mainCanvas = document.createElement('canvas');
   mainCanvas.id = 'mainCanvas';
   mainCtx = mainCanvas.getContext('2d');
