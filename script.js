@@ -14,8 +14,8 @@ function explore(){
     exploreProjects();
   }
 
-  //exploreProjects()
-  sandrisAnimate();
+  exploreProjects()
+  //sandrisAnimate();
 }
 
 
