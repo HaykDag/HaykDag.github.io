@@ -1,0 +1,28 @@
+.sandris-cnt {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.sandris-cnt>span {
+  text-align: center;
+  padding: 15px 5px;
+  border: 1px solid white;
+  border-radius: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  user-select: none;
+  min-width: 20px;
+}
+
+.sandris-cnt>canvas {
+  border: 1px solid gray;
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

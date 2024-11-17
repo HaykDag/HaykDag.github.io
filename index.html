@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HaykDag's Portfolio</title>
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./src/avatar/header.css">
+  <link rel="stylesheet" href="./src/sandris/sandris.css">
+</head>
+<body class="flex">
+  <header class="header flex" id="header">
+    <div class="title flex">
+      <h1>HaykDag</h1>
+      <div class="contact-info">
+        <div class="contact-item">📞 +86-166-0260-7848</div>
+        <div class="contact-item">✉ haykdaghl@gmail.com</div>
+        <div class="contact-item">📍Tianjin,China</div>
+      </div>
+    </div>
+    <div class="avatar-cnt flex">
+      <canvas id="avatar"></canvas>
+    </div>
+    <div class="info flex" id="typewriter"></div>
+  </header>
+  <main class="flex" id="main">
+    <div class="sandris-cnt flex" id="sandrisCnt"></div>
+    <!-- <canvas id="mainCanvas"></canvas> -->
+  </main>
+
+  <!--utils-->
+  <script src="./src/utils/utils.js"></script>
+
+  <!-- avatar -->
+  <script src="./src/avatar/utils.js"></script>
+  <script src="./src/avatar/physics.js"></script>
+  <script src="./src/avatar/avatar.js"></script>
+  <script src="./src/avatar/header.js"></script>
+
+  <!-- sandris -->
+  <script src="./src/sandris/playground.js"></script>
+  <script src="./src/sandris/sand.js"></script>
+  <script src="./src/sandris/shape.js"></script>
+  <script src="./src/sandris/sandris.js"></script>
+  
+  <script src="./src/animation/animation.js"></script>
+
+  <!-- main projects -->
+  <script src="./src/main/drawProjects.js"></script>
+  <script src="./src/main/viewport.js"></script>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
