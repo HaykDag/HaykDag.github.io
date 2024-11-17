@@ -6,11 +6,10 @@ const bubbles = [];
 
 function explore(){
   document.getElementById('explore').blur();
-  header.style.height = '250px';
   document.getElementById('explore').style.display = 'none';
 
-  //exploreProjects()
-  sandrisAnimate();
+  exploreProjects()
+  //sandrisAnimate();
 }
 
 
@@ -124,6 +123,11 @@ function highlightProject(){
   mainCtx.strokeStyle = 'green';
   mainCtx.lineWidth = 4*viewport.zoom;
   mainCtx.stroke();
+
+  const midX = focusedProject.pos.left+(focusedProject.pos.right-focusedProject.pos.left)/2
+  mainCtx.beginPath();
+  mainCtx.textAlign = 'center'
+  mainCtx.fillText('Double Click to see Project',midX,focusedProject.pos.top-margin-20);
 }
 
 function handleMouseMove(e){

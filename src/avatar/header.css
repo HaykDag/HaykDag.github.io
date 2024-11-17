@@ -2,8 +2,10 @@
   position: relative;
   background-image: -webkit-linear-gradient(90deg, #050505, #261a1a, #1f3323, #626f4b);
   user-select: none;
-  height: fit-content;
   width: 100%;
+  min-width: 350px;
+  border-bottom: 1px solid rgb(4, 51, 11);
+
 }
 
 header>button {
@@ -56,10 +58,14 @@ header>button:hover {
   gap: 4px;
   flex: 1.4;
   font-size: 1.5rem;
-  background: -webkit-linear-gradient(90deg, #71725d, #eee, #20a45e);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+}
+
+.contact-info {
+  flex: 1.5;
+}
+
+.contact-item {
+  color: white;
 }
 
 .avatar-cnt {
@@ -73,7 +79,7 @@ header>button:hover {
 }
 
 .info {
-  flex: 3;
+  flex: 2.5;
   flex-wrap: wrap;
   flex-direction: column;
   bottom: 10px;
@@ -97,6 +103,7 @@ header>button:hover {
 }
 
 @media (max-width: 1350px) {
+
   .title {
     font-size: 2rem;
   }
@@ -195,10 +202,6 @@ header>button:hover {
 }
 
 @media (max-width: 605px) {
-
-  /* .title {
-    font-size: 0.8rem;
-  } */
   .header {
     flex-direction: column;
   }

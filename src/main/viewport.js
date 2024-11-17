@@ -97,7 +97,6 @@ class Viewport{
     if(e.isPrimary){
       const currentTime = new Date().getTime();
       const tapLength = currentTime - this.lastTap;
-      console.log(tapLength)
       if (tapLength < 300 && tapLength > 0) {
         this.#handleDoubleClick(e);
       }
@@ -113,7 +112,7 @@ class Viewport{
 
   #handleDoubleClick(e){
     const {offsetX,offsetY} = e;
-    console.log(e)
+ 
     const mousePos = this.subtract({x:offsetX,y:offsetY},this.center);
     const x = Math.floor(mousePos.x*this.zoom-this.offset.x);
     const y = Math.floor(mousePos.y*this.zoom - this.offset.y);
@@ -149,17 +148,6 @@ class Viewport{
 
   #handleMouseUp(e){
     this.pan.active = false;
-    // if(this.pan.offset.x ===0 && this.pan.offset.y===0){
-    //   let {offsetX,offsetY} = e;
-      
-    //   const mousePos = this.subtract({x:offsetX,y:offsetY},this.center);
-    //   const x = Math.floor(mousePos.x*this.zoom-this.offset.x);
-    //   const y = Math.floor(mousePos.y*this.zoom - this.offset.y);
-     
-    //   openProject({x,y});
-    //   return;
-    // }
-
     this.offset = this.add(this.offset,this.pan.offset);
     this.pan.start = {x:0,y:0};
     this.pan.offset = {x:0,y:0};

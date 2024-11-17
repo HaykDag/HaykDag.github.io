@@ -6,7 +6,9 @@
     font-family: Arial, Helvetica, sans-serif;
     gap: 10px;
     overflow: hidden;
-    width: 100svw;
+    width: 100vw;
+    height: fit-content;
+    min-width: 350px;
   }
 
   .flex {
@@ -15,17 +17,7 @@
     align-items: center;
   }
 
-  /* main {
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    overflow-x: hidden;
-  } */
-
-
   #mainCanvas {
-    /* display: flex; */
-    /* border: 10px solid gray; */
     border-top: none;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;

@@ -4,7 +4,7 @@ class Bubble{
     this.x = x;
     this.xDelta = Math.random()*10;
     this.y = canvas.height*viewport.zoom;
-    this.yDelta = Math.random()*(-2);
+    this.yDelta = Math.random()*-5;
     this.rad = rad;
     this.color = color;
     this.hovered = false;
