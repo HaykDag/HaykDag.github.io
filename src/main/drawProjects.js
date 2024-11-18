@@ -38,7 +38,7 @@ const positions = [
   },
   {
     id:'maze',
-    pos:{left:3400,top:1095,right:4397,bottom:1645},
+    pos:{left:3400,top:1095,right:4550,bottom:1850},
     url: 'https://maze-generator-iota.vercel.app/'
   },
   {
@@ -48,7 +48,7 @@ const positions = [
   },
   {
     id:'seekdiscomfort2',
-    pos:{left:2832,top:1887,right:4635,bottom:2741},
+    pos:{left:2500,top:2000,right:4300,bottom:2860},
     url: 'https://seekdiscomfort2.onrender.com/'
   },
   {
@@ -128,7 +128,7 @@ function drawProjects(ctx){
 
 
 
-  // //pathfinder
+  //pathfinder
   fillTexts(ctx,text.proud,3732,250);
   const proudInPoint = {x:3472,y:280};
   drawArrow(ctx,tictactoeImgOutPoint,proudInPoint);
@@ -150,7 +150,7 @@ function drawProjects(ctx){
   drawArrow(ctx,pathfinderImgOutPoint,mazeInPoint);
   const mazeOutPoint = {x:4912,y:1300};
   ctx.drawImage(mazeImg,3400,1100);
-  const mazeImgInPoint = {x:4428,y:1363};
+  const mazeImgInPoint = {x:4550,y:1400};
   drawArrow(ctx,mazeOutPoint,mazeImgInPoint);
   const mazeImgOutPoint = {x:3400,y:1391};
 
@@ -182,10 +182,10 @@ function drawProjects(ctx){
   const seekdiscomfort2InPoint = {x:2120,y:1730};
   drawArrow(ctx,seekdiscomfort1ImgOutPoint,seekdiscomfort2InPoint);
   const seekdiscomfort2OutPoint = {x:2480,y:1731};
-  ctx.drawImage(seekdiscomfort2Img,2832,1891);
-  const seekdiscomfort2ImgInPoint = {x:2808,y:2147};
+  ctx.drawImage(seekdiscomfort2Img,2500,2000);
+  const seekdiscomfort2ImgInPoint = {x:2908,y:2000};
   drawArrow(ctx,seekdiscomfort2OutPoint,seekdiscomfort2ImgInPoint);
-  const seekdiscomfort2ImgOutPoint = {x:4644,y:2295};
+  const seekdiscomfort2ImgOutPoint = {x:4300,y:2300};
 
 
   //avatar
