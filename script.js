@@ -1,8 +1,10 @@
 const mainEl = document.getElementById('main');
+
 let expBtn = null;
 let mainCanvas = null;
 let mainCtx = null;
 let viewport = null;
+let showMaze = false;
 const bubbles = [];
 
 function explore(){
@@ -20,22 +22,26 @@ function explore(){
 
 
 function exploreProjects(){
-  expBtn.style.display = 'none';
-
-  mainCanvas = document.createElement('canvas');
-  mainCanvas.id = 'mainCanvas';
+  showMaze = false;
+  document.getElementById('btnCnt').style.display = 'none';
+  expBtn.innerText = "Drive in my project world";
+  // expBtn.style.left = 'auto';
+  // expBtn.style.right = '18%';
+  expBtn.onclick = loadMaze;
+  mainCanvas = document.getElementById('mainCanvas') || document.createElement('canvas');
+  mainCanvas.id ? '' : mainCanvas.id='mainCanvas';
   mainCtx = mainCanvas.getContext('2d');
   mainCanvas.width = window.innerWidth;
   mainCanvas.height = window.innerHeight*0.8;
-
+  mainCanvas.style.backgroundColor = 'transparent';
   viewport = new Viewport(mainCanvas);
 
   mainEl.innerHTML = '';
-
   mainEl.appendChild(mainCanvas);
   mainCanvas.addEventListener('mousemove',handleMouseMove);
 
   draw();
+
   activateProjects();// a little trick to activate chess and websites
 }
 
@@ -44,8 +50,10 @@ let focusedProject = null;
 let prevTime = 0;
 
 function draw(time){
+  if(showMaze) return;
+
   mainCtx.clearRect(0,0,mainCanvas.width,mainCanvas.height);
-  
+
   const timeDiff = time-prevTime;
   if(timeDiff>3000){
     generateBubbles(3);
@@ -69,6 +77,26 @@ function draw(time){
   requestAnimationFrame(draw);
 }
 
+function loadMaze(){
+  expBtn.innerText = 'Explore the Projects';
+  mainCanvas.style.backgroundColor = '#14432e'
+  expBtn.onclick = exploreProjects;
+  mainCtx.clearRect(0,0,mainCanvas.width,mainCanvas.height);
+  const {bottom} = document.querySelector('header').getBoundingClientRect();
+  mainCanvas.height = window.innerHeight - bottom-2;
+  maze = new Maze(mainCanvas,mazeRows,mazeColumns,mazeSpeed);
+  showMaze = true;
+  
+  document.getElementById('btnCnt').style.display = 'flex';
+  
+}
+
+function genMaze(){
+  maze.generate();
+  maze.animate();
+  game = new Game();
+  game.loop();
+}
 
 function isPointInProject(p){
   for(const project of positions){

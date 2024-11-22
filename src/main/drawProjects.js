@@ -25,60 +25,6 @@ const text = {
           `chess game`]
 }
 
-const positions = [
-  {
-    id:'tictactoe',
-    pos:{left:2398,top:125,right:3028,bottom:811},
-    url: 'https://tic-tac-toe-sand-iota.vercel.app/'
-  },
-  {
-    id:'pathfinder',
-    pos:{left:5382,top:296,right:6137,bottom:729},
-    url: 'https://pathfinder-one-xi.vercel.app/'
-  },
-  {
-    id:'maze',
-    pos:{left:3400,top:1095,right:4550,bottom:1850},
-    url: 'https://maze-generator-iota.vercel.app/'
-  },
-  {
-    id:'seekdiscomfort1',
-    pos:{left:0,top:1282,right:1825,bottom:2201},
-    url: 'https://seekdiscomfort.onrender.com/'
-  },
-  {
-    id:'seekdiscomfort2',
-    pos:{left:2500,top:2000,right:4300,bottom:2860},
-    url: 'https://seekdiscomfort2.onrender.com/'
-  },
-  {
-    id:'avatar',
-    pos:{left:5547,top:2879,right:6172,bottom:3356},
-    url: 'https://avatar-iota-three.vercel.app/'
-  },
-  {
-    id:'vacuumCleaner',
-    pos:{left:1967,top:3157,right:3785,bottom:3973},
-    url: 'https://react-vacuum.vercel.app/'
-  },
-  {
-    id:'skeletonEditor',
-    pos:{left:55,top:3802,right:1299,bottom:4536},
-    url: 'https://skeleton-editor.vercel.app/'
-  },
-  {
-    id:'sandris',
-    pos:{left:2250,top:4429,right:2896,bottom:5238},
-    url: 'https://sandris.vercel.app/'
-  },
-  {
-    id:'chess',
-    pos:{left:4571,top:4156,right:5160,bottom:4972},
-    url: 'https://hdchess.onrender.com/'
-  },
-
-]
-
 const ticTacToeImg = new Image();
 ticTacToeImg.src = './img/tictactoe.png';
 
@@ -108,6 +54,69 @@ sandrisImg.src = './img/sandris.png';
 
 const chessImg = new Image();
 chessImg.src = './img/chess.png';
+
+const positions = [
+  {
+    id:'tictactoe',
+    pos:{left:2398,top:125,right:3028,bottom:811},
+    url: 'https://tic-tac-toe-sand-iota.vercel.app/',
+    img: ticTacToeImg
+  },
+  {
+    id:'pathfinder',
+    pos:{left:5382,top:296,right:6137,bottom:729},
+    url: 'https://pathfinder-one-xi.vercel.app/',
+    img: pathfinderImg,
+  },
+  {
+    id:'maze',
+    pos:{left:3400,top:1095,right:4550,bottom:1850},
+    url: 'https://maze-generator-iota.vercel.app/',
+    img: mazeImg,
+  },
+  {
+    id:'seekdiscomfort1',
+    pos:{left:0,top:1282,right:1825,bottom:2201},
+    url: 'https://seekdiscomfort.onrender.com/',
+    img: seekDiscomfort1Img
+  },
+  {
+    id:'seekdiscomfort2',
+    pos:{left:2500,top:2000,right:4300,bottom:2860},
+    url: 'https://seekdiscomfort2.onrender.com/',
+    img: seekdiscomfort2Img
+  },
+  {
+    id:'avatar',
+    pos:{left:5547,top:2879,right:6172,bottom:3356},
+    url: 'https://avatar-iota-three.vercel.app/',
+    img: avatarImg,
+  },
+  {
+    id:'vacuumCleaner',
+    pos:{left:1967,top:3157,right:3785,bottom:3973},
+    url: 'https://react-vacuum.vercel.app/',
+    img:vacuumCleanerImg
+  },
+  {
+    id:'skeletonEditor',
+    pos:{left:55,top:3802,right:1299,bottom:4536},
+    url: 'https://skeleton-editor.vercel.app/',
+    img:skeletonEditorImg
+  },
+  {
+    id:'sandris',
+    pos:{left:2250,top:4429,right:2896,bottom:5238},
+    url: 'https://sandris.vercel.app/',
+    img: sandrisImg
+  },
+  {
+    id:'chess',
+    pos:{left:4571,top:4156,right:5160,bottom:4972},
+    url: 'https://hdchess.onrender.com/',
+    img: chessImg
+  },
+]
 
 
 function drawProjects(ctx){

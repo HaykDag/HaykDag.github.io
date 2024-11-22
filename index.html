@@ -24,6 +24,16 @@
       <canvas id="avatar"></canvas>
     </div>
     <div class="info flex" id="typewriter"></div>
+    <div id="btnCnt" class="btn-cnt flex">
+      <button id="mazeBtn" onclick="genMaze()">Generate Maze</button>
+      <label>Rows</label>
+      <input type="range" min="3" max="10" step="1" value="5" onchange="setRows(this.value)"></input>
+      <label>Columns</label>
+      <input type="range" min="5" max="15" step="1" value="10" onchange="setColumns(this.value)"></input>
+      <label>Speed</label>
+      <input type="range" min="1" max="10" step="1" value="3" onchange="setSpeed(this.value)"></input>
+      <button id="resetBtn" onclick="reset()">Reset</button>
+    </div>
   </header>
   <main class="flex" id="main">
     <div class="sandris-cnt flex" id="sandrisCnt"></div>
@@ -51,6 +61,11 @@
   <script src="./src/main/drawProjects.js"></script>
   <script src="./src/main/viewport.js"></script>
 
+  <script src="./src/maze/node.js"></script>
+  <script src="./src/maze/maze.js"></script>
+  <script src="./src/maze/car.js"></script>
+  <script src="./src/maze/game.js"></script>
+  <script src="./src/maze/script.js"></script>
 
   <script src="script.js"></script>
 </body>
