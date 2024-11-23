@@ -9,9 +9,9 @@ class Car {
       this.speed = 0;
       this.maxSpeed = size*0.05;
       this.acceleration = size*0.0005;
-      this.friction = size*0.0005;
-      this.turnSpeed = 0.045;
-
+      this.friction = size*0.002;
+      this.turnMaxSpeed = 0.05;
+      this.wheelAngle = 0;
       this.left = false;
       this.right = false;
   }
@@ -54,10 +54,11 @@ class Car {
     if (this.speed !== 0) {
         const flip = this.speed > 0 ? 1 : -1;
         const originalAngle = this.angle;
-
-        if (keys["ArrowLeft"]) this.angle -= this.turnSpeed * flip;
-        if (keys["ArrowRight"]) this.angle += this.turnSpeed * flip;
-
+        this.wheelAngle += 0.003;
+        this.wheelAngle = Math.min(this.turnMaxSpeed,this.wheelAngle);
+        if (this.left) this.angle -= this.wheelAngle * flip;
+        if (this.right) this.angle += this.wheelAngle * flip;
+        if(!this.right && !this.left) this.wheelAngle = 0;
         // Check for collision after rotation
         if (this.hasCollision(this.x, this.y, maze.walls)) {
             // Collision detected during turn, revert the angle and reduce speed
@@ -86,7 +87,7 @@ class Car {
     mainCtx.rotate(this.angle);
 
     // Draw Wheels
-    let wheelAngle = this.left ? -Math.PI/30 : this.right ? +Math.PI/30 : 0;
+    let wheelAngle = this.left ? - this.wheelAngle : this.right ? +this.wheelAngle : 0;
     mainCtx.fillStyle = "black";
     mainCtx.save();
     mainCtx.rotate(wheelAngle);
