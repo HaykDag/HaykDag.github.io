@@ -69,7 +69,10 @@ class Car {
     const project = this.isInProject(maze); 
     if(project){
       project.openned = true;
-      window.open(project.url, '_blank','noopener');
+      const newTab = window.open(project.url, '_blank','noopener,noreferrer');
+      if(newTab){
+        newWindow.opener = null;
+      }
       for(const k of Object.keys(game.keys)){
         game.keys[k] = false;
       }
@@ -220,15 +223,16 @@ class Car {
   isInProject(maze){
     const {x,y} = this;
     const {nodeWidth,nodeHeight,projects} = maze;
-    const minSize = Math.min(nodeHeight,nodeWidth);
+    const minSize = Math.min(nodeWidth,nodeHeight);
     for(const project of projects){
       if(project.openned) continue;
-      if(x>=project.x+minSize/16  && 
-        x<=project.x + minSize-minSize/8 &&
-        y>=project.y+minSize/16   &&
-        y <= project.y+minSize-minSize/8){
-          return project;
+      const center = {
+        x:project.x+minSize/4,
+        y:project.y+minSize/4,
       }
+      
+      const dist = Math.sqrt((x-center.x)*(x-center.x)+(y-center.y)*(y-center.y));
+      if(dist<=minSize*0.2) return project;
     }
     return null;
   }

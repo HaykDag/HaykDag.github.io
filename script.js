@@ -9,25 +9,29 @@ const bubbles = [];
 
 function explore(){
   expBtn = document.getElementById('explore'); 
-  expBtn.blur();
-  expBtn.innerText = 'Skip the Game';
+  expBtn.style.display = 'none';
+  setTimeout(()=>{
+    expBtn.style.display = 'block';
+    expBtn.innerText = 'Skip the Game';
+  },5500)
   expBtn.onclick = ()=> {
     sandrisFinish = true;
     exploreProjects();
   }
-
-  //exploreProjects()
   sandrisAnimate();
 }
 
 
 function exploreProjects(){
-  showMaze = false;
-  document.getElementById('btnCnt').style.display = 'none';
-  expBtn.innerText = "Drive in my project world";
-  // expBtn.style.left = 'auto';
-  // expBtn.style.right = '18%';
-  expBtn.onclick = loadMaze;
+  if(platform === 'Desktop'){
+    showMaze = false;
+    document.getElementById('btnCnt').style.display = 'none';
+    expBtn.innerText = "Drive in my project world";
+    expBtn.onclick = loadMaze;
+  }else{
+    expBtn.style.display = 'none';
+  }
+  
   mainCanvas = document.getElementById('mainCanvas') || document.createElement('canvas');
   mainCanvas.id ? '' : mainCanvas.id='mainCanvas';
   mainCtx = mainCanvas.getContext('2d');
@@ -201,6 +205,17 @@ function resizeMainCanvas() {
   if(!mainCanvas) return;
   mainCanvas.width = window.innerWidth;
   mainCanvas.height = window.innerHeight*0.8;
+
+  if(showMaze){
+    loadMaze();
+  }
 }
 
-
+function downloadFunc(){
+    const anchor=document.createElement('a');
+    anchor.setAttribute('href','./resume/resume.pdf');
+    anchor.setAttribute('download','');
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.parentNode.removeChild(anchor);
+  }

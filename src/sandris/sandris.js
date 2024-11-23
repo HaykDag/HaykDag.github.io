@@ -30,6 +30,9 @@ function sandrisAnimate(time){
     sandrisCnt.style.display = 'flex';
     const sandrisInfo = document.createElement('span');
     sandrisInfo.textContent = `Get at least 1 point to move ahead. Sorry, there is no way around that`;
+    setTimeout(()=>{
+      sandrisInfo.textContent = `I'm kidding. You can just skip this wonderful game.`;
+    },5000);
     sandrisCanvas.height = getHeight();
     playground = new Playground(sandrisCanvas);
     sandrisCnt.appendChild(sandrisInfo);

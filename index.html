@@ -15,8 +15,9 @@
     <div class="title flex">
       <h1>HaykDag</h1>
       <div class="contact-info">
-        <div class="contact-item"><span>📞</span> +86-166-0260-7848</div>
+        <div class="contact-item"><span>📱</span> +86-166-0260-7848</div>
         <div class="contact-item"><span>✉</span> haykdaghl@gmail.com</div>
+        <div class="contact-item" onclick="downloadFunc()" style="cursor:pointer" ><span>📝</span> My resume</div>
         <div class="contact-item"><span>📍</span>Tianjin,China</div>
       </div>
     </div>
@@ -25,7 +26,7 @@
     </div>
     <div class="info flex" id="typewriter"></div>
     <div id="btnCnt" class="btn-cnt flex">
-      <button id="mazeBtn" onclick="genMaze()">Generate Maze</button>
+      <button id="mazeBtn" onclick="genMaze()">Generate</button>
       <label>Rows</label>
       <input type="range" min="3" max="10" step="1" value="5" onchange="setRows(this.value)"></input>
       <label>Columns</label>
@@ -37,7 +38,6 @@
   </header>
   <main class="flex" id="main">
     <div class="sandris-cnt flex" id="sandrisCnt"></div>
-    <!-- <canvas id="mainCanvas"></canvas> -->
   </main>
 
   <!--utils-->
