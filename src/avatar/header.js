@@ -72,7 +72,7 @@ typewriter
   .pauseFor(350)
   .typeString("<span><strong>Hello, World! 👋</strong></span>")
   .pauseFor(200)
-  .typeString("<span>I’m <strong>Hayk</strong>, a self-taught full-stack web developer who thrives on caffeine and curiosity.</span>")
+  .typeString("<span>I’m <strong>Hayk</strong>, a self-taught software engineer who thrives on caffeine and curiosity.</span>")
   .pauseFor(200)
   .typeString("<span>Feel free to poke around and check out my projects.</span>")
   .pauseFor(200)
