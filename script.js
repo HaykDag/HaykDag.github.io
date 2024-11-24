@@ -26,7 +26,7 @@ function exploreProjects(){
   if(platform === 'Desktop'){
     showMaze = false;
     document.getElementById('btnCnt').style.display = 'none';
-    expBtn.innerText = "Drive in my project world";
+    expBtn.innerText = "🏎️ in my project world ";
     expBtn.onclick = loadMaze;
   }else{
     expBtn.style.display = 'none';
@@ -82,7 +82,7 @@ function draw(time){
 }
 
 function loadMaze(){
-  expBtn.innerText = 'Explore the Projects';
+  expBtn.innerText = '🔙';
   mainCanvas.style.backgroundColor = '#14432e'
   expBtn.onclick = exploreProjects;
   mainCtx.clearRect(0,0,mainCanvas.width,mainCanvas.height);

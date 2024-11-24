@@ -7,10 +7,10 @@ class Car {
       this.height = size*0.6;
       this.angle = Math.PI/2;
       this.speed = 0;
-      this.maxSpeed = size*0.05;
+      this.maxSpeed = size*0.04;
       this.acceleration = size*0.0005;
-      this.friction = size*0.002;
-      this.turnMaxSpeed = 0.05;
+      this.friction = size*0.001;
+      this.turnMaxSpeed = 0.06;
       this.wheelAngle = 0;
       this.left = false;
       this.right = false;
@@ -50,15 +50,25 @@ class Car {
     keys["ArrowLeft"] ? this.left = true : this.left = false;
     keys["ArrowRight"]? this.right = true : this.right = false;
 
+    //change wheel angle even if not moving
+    if (this.left) this.wheelAngle -= 0.004;
+    if (this.right) this.wheelAngle += 0.004;
+    if(!this.right && !this.left){
+      // this.wheelAngle -= Math.sign(this.wheelAngle)*0.003;
+      // if(Math.abs(this.wheelAngle)<=0.002) this.wheelAngle = 0;
+      this.wheelAngle = 0;
+    } 
+    this.wheelAngle = Math.sign(this.wheelAngle)*Math.min(this.turnMaxSpeed,Math.abs(this.wheelAngle));
+    
     // Handle rotation and check for collision while turning
     if (this.speed !== 0) {
         const flip = this.speed > 0 ? 1 : -1;
         const originalAngle = this.angle;
-        this.wheelAngle += 0.003;
-        this.wheelAngle = Math.min(this.turnMaxSpeed,this.wheelAngle);
-        if (this.left) this.angle -= this.wheelAngle * flip;
-        if (this.right) this.angle += this.wheelAngle * flip;
-        if(!this.right && !this.left) this.wheelAngle = 0;
+        
+        this.angle += this.wheelAngle * flip;
+        //if (this.left) this.angle += this.wheelAngle * flip;
+        // if (this.right) this.angle += this.wheelAngle * flip;
+        
         // Check for collision after rotation
         if (this.hasCollision(this.x, this.y, maze.walls)) {
             // Collision detected during turn, revert the angle and reduce speed
@@ -87,10 +97,10 @@ class Car {
     mainCtx.rotate(this.angle);
 
     // Draw Wheels
-    let wheelAngle = this.left ? - this.wheelAngle : this.right ? +this.wheelAngle : 0;
+    //let wheelAngle = this.left ? - this.wheelAngle : this.right ? +this.wheelAngle : 0;
     mainCtx.fillStyle = "black";
     mainCtx.save();
-    mainCtx.rotate(wheelAngle);
+    mainCtx.rotate(this.wheelAngle);
     const wheelWidth = this.width / 10;
     const wheelHeight = this.height / 5;
     mainCtx.fillRect(-this.width / 2+2, -this.height / 3, wheelWidth, wheelHeight);                   // Front left
