@@ -7,10 +7,10 @@ class Car {
       this.height = size*0.6;
       this.angle = Math.PI/2;
       this.speed = 0;
-      this.maxSpeed = size*0.04;
+      this.maxSpeed = size*0.01;
       this.acceleration = size*0.0005;
-      this.friction = size*0.001;
-      this.turnMaxSpeed = 0.06;
+      this.friction = size*0.0001;
+      this.turnMaxSpeed = 0.02;
       this.wheelAngle = 0;
       this.left = false;
       this.right = false;
@@ -36,8 +36,14 @@ class Car {
     const newX = this.x + Math.sin(this.angle) * this.speed;
     const newY = this.y - Math.cos(this.angle) * this.speed;
 
+    //filter the walls only around the cars to check for collision
+    const nearWalls = maze.walls.filter(({start,end})=>{
+      const sDist = Math.sqrt((this.x-start.x)*(this.x-start.x),(this.y-start.y)*(this.y-start.y));
+      const eDist = Math.sqrt((this.x-end.x)*(this.x-end.x),(this.y-end.y)*(this.y-end.y));
+      if(sDist<=this.height*4 || eDist.dist<=this.height*4) return {start,end};
+    })
     // Check for collision along the movement path
-    if (!this.hasCollisionInterpolated(this.x, this.y, newX, newY, maze.walls)) {
+    if (!this.hasCollisionInterpolated(this.x, this.y, newX, newY, nearWalls)) {
         // Update the position if no collision
         this.x = newX;
         this.y = newY;
