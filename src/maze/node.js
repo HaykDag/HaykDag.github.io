@@ -22,16 +22,8 @@ class Node {
             ctx.fill();
         }
         if(this.isStartNode){
-            
             const imgSize = Math.min(width/2,height/2);
             ctx.drawImage(startNodeImg,0,0,209,241,this.col * width+width/4,this.row * height+height/4,imgSize,imgSize);
-            
-            /*
-            ctx.beginPath();
-            ctx.fillStyle = "#F39C12";
-            ctx.arc(this.col * width + width/2, this.row * height + height/2,Math.min(width,height)/4,0,Math.PI*2);
-            ctx.fill();
-            */
         }
         //top
         if(this.walls[0]){

@@ -22,7 +22,7 @@ setTimeout(()=>{
   exploreBtn.textContent = "Let's Go! 🚀";
   exploreBtn.onclick = explore;
   header.appendChild(exploreBtn);
-},13000);
+},6000);
 
 resizeCanvas();
 function animate(timeStamp){
@@ -65,19 +65,19 @@ animate();
 const typewriterEl = document.getElementById('typewriter');
 const typewriter = new Typewriter(typewriterEl,{
   loop:false,
-  delay: 50,
+  delay: 20,
 });
 
 typewriter
-  .pauseFor(350)
+  .pauseFor(50)
   .typeString("<span><strong>Hello, World! 👋</strong></span>")
-  .pauseFor(200)
+  .pauseFor(50)
   .typeString("<span>I’m <strong>Hayk</strong>, a self-taught software engineer who thrives on caffeine and curiosity.</span>")
-  .pauseFor(200)
+  .pauseFor(50)
   .typeString("<span>Feel free to poke around and check out my projects.</span>")
-  .pauseFor(200)
+  .pauseFor(50)
   .typeString("<span>And please don’t feed the bugs!🐛")
-  .pauseFor(200)
+  .pauseFor(50)
   .start()
   
 

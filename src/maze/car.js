@@ -5,11 +5,11 @@ class Car {
       const size = Math.min(maze.nodeHeight,maze.nodeWidth)
       this.width = size*0.35;
       this.height = size*0.6;
-      this.angle = Math.PI/2;
+      this.angle = Math.PI*2;
       this.speed = 0;
-      this.maxSpeed = size*0.01;
-      this.acceleration = size*0.0005;
-      this.friction = size*0.0001;
+      this.maxSpeed = size*0.02;
+      this.acceleration = size*0.0007;
+      this.friction = size*0.00015;
       this.turnMaxSpeed = 0.02;
       this.wheelAngle = 0;
       this.left = false;

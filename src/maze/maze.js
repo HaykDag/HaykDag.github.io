@@ -152,7 +152,7 @@ class Maze{
     }
 
     #projectPosOccupied(x,y){
-        if(x===0 && y===0) return true;
+        if(x===this.columns*this.nodeWidth) return true;
         for(const p of this.projects){
             if(p.x===x && p.y===y){
                 return true

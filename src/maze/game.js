@@ -1,6 +1,6 @@
 class Game {
   constructor() {
-    this.car = new Car(maze.nodeWidth/2, maze.nodeHeight/2);
+    this.car = new Car(maze.canvas.width - maze.nodeWidth/2,maze.canvas.height-maze.nodeHeight/2);
     this.keys = {};
 
     window.addEventListener("keydown", (e) => this.keys[e.key] = true);

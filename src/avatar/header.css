@@ -1,15 +1,15 @@
 .header {
+  font-family: 'Poppins', sans-serif;
   position: relative;
-  background-image: -webkit-linear-gradient(90deg, #050505, #261a1a, #1f3323, #626f4b);
+  background: #2d3748;
   user-select: none;
   min-width: 100%;
   border-bottom: 1px solid rgb(4, 51, 11);
-
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 header>button {
   position: absolute;
-  font-family: 'Courier New', Courier, monospace;
   background: transparent;
   color: white;
   font-size: 20px;
@@ -18,17 +18,16 @@ header>button {
   transition: 0.4s;
   padding: 0px 20px;
   border-radius: 25px;
-  border: 1px solid rgb(6, 118, 52);
+  border: 1px solid #63b3ed;
   cursor: pointer;
 }
 
 header>button:hover {
-  background: #20a45e;
+  background: #63b3ed;
   color: white;
 }
 
 .title {
-  font-family: 'Courier New', Courier, monospace;
   align-self: flex-start;
   padding-top: 15px;
   flex: 1;
@@ -42,10 +41,8 @@ header>button:hover {
 
 .title>h1 {
   margin: 0;
-  background: -webkit-linear-gradient(90deg, #20a45e, #eee, #202020);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #63b3ed;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .contact-info {
@@ -53,7 +50,7 @@ header>button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: start;
   gap: 4px;
   flex: 1.4;
   font-size: 1.5rem;
@@ -65,16 +62,21 @@ header>button:hover {
 
 .contact-item {
   color: white;
+  gap: 8px;
 }
 
 .avatar-cnt {
   flex: 1;
+  margin: 15px 0;
 }
 
 #avatar {
   width: 50%;
   height: auto;
-  border-radius: 15px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  background-color: #222325;
+  border: 5px solid #2d3748;
 }
 
 .info {
