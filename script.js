@@ -83,7 +83,7 @@ function draw(time){
 
 function loadMaze(){
   expBtn.innerText = '🔙';
-  mainCanvas.style.backgroundColor = '#14432e'
+  mainCanvas.style.backgroundColor = '#253b54'
   expBtn.onclick = exploreProjects;
   mainCtx.clearRect(0,0,mainCanvas.width,mainCanvas.height);
   const {bottom} = document.querySelector('header').getBoundingClientRect();
